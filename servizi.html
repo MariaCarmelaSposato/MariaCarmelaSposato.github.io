@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Nostri Servizi - tundi</title>
+  
+  <!-- Font di Google (Outfit e Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2-family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Fogli di stile -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css?v=272">
+</head>
+<body class="page-services">
+
+  <!-- Navigation: Floating Pill -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+
+    <a href="index.html" class="nav-brand"><svg id="tundi-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252.8 89">
+    <path class="logo-n" d="M99.45,58.83c0-16.59,13.39-29.84,29.84-29.84s29.84,13.25,29.84,29.84v25.86c0,2.18-1.75,3.93-3.93,3.93s-3.93-1.75-3.93-3.93v-25.86c0-12.08-9.9-21.98-21.98-21.98s-21.98,9.9-21.98,21.98"/>
+    <path class="logo-u" d="M99.45,59.08c0-2.17,1.76-3.94,3.94-3.94s3.94,1.76,3.94,3.94v-.3c0,16.45-13.39,29.84-29.84,29.84s-29.84-13.39-29.84-29.84v-25.85c0-2.33,1.75-3.93,3.93-3.93s3.93,1.6,3.93,3.93v25.85c0,12.08,9.9,21.98,21.98,21.98s21.98-9.9,21.98-21.98"/>
+    <path class="logo-d" d="M232.55,58.36v.63c0,16.58-13.55,30-30,30s-30-13.42-30-30,13.42-30,30-30c9.62,0,18.1,4.56,23.67,11.65V3.29c0-1.9,1.39-3.29,3.16-3.29s3.17,1.39,3.17,3.29v55.07ZM225.84,58.99c0-12.79-10.38-23.17-23.29-23.17s-23.17,10.38-23.17,23.17,10.38,23.29,23.17,23.29,23.29-10.38,23.29-23.29Z"/>
+    <path class="logo-i" d="M245.96,85.2v-52.92c0-1.9,1.39-3.42,3.42-3.42,1.77,0,3.42,1.52,3.42,3.42v52.92c0,1.9-1.64,3.42-3.42,3.42-2.03,0-3.42-1.52-3.42-3.42Z"/>
+    <path class="logo-t" d="M33.8,85.58c0,1.9-1.52,3.42-3.42,3.42h-2.03c-13.29,0-28.36-8.35-28.36-30.38V3.8C0,1.9,1.39.38,3.42.38c1.9,0,3.42,1.52,3.42,3.42v25.7h19.87c1.77,0,3.16,1.39,3.16,3.16,0,1.9-1.39,3.29-3.16,3.29H6.84v22.66c0,16.2,10,23.42,21.52,23.42l2.03.13c1.9,0,3.42,1.52,3.42,3.42Z"/>
+</svg></a>
+
+    <ul class="nav-links">
+      <li class="dropdown-container">
+        <a href="progetti.html">Progetti</a>
+        <ul class="dropdown-menu">
+          <li><a href="progetti.html?filter=interior">Interior Design</a></li>
+          <li><a href="progetti.html?filter=exhibit">Exhibit</a></li>
+          <li><a href="progetti.html?filter=product">Product Design</a></li>
+          <li><a href="progetti.html?filter=outdoor">Outdoor</a></li>
+        </ul>
+      </li>
+      <li><a href="servizi.html" class="active">Servizi</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="services-hero" style="padding-top: 150px; padding-bottom: 0px;">
+    <div class="container reveal-on-scroll" style="text-align: center;">
+      <h1 style="color: var(--accent-burgundy);">I Nostri Servizi</h1>
+      <p class="hero-subtitle">Un approccio sartoriale al design, dove ogni spazio viene scolpito attorno a chi lo abita, unendo estetica contemporanea e funzionalità.</p>
+    </div>
+  </header>
+
+  <!-- Sezione Servizi (Staggered Arches Grid) -->
+  <section class="services-section">
+    <div style="max-width: 95%; margin: 0 auto;">
+      <div class="services-grid">
+        
+        <!-- Servizio 1 -->
+        <div class="service-image-card reveal-on-scroll">
+          <img src="assets/cucina vista bancone.RGB_color.png" alt="Progettazione d'Interni" class="service-bg">
+          <div class="service-overlay"></div>
+          <div class="service-content">
+            <div class="service-icon">01</div>
+            <h3 class="service-title">Progettazione d'Interni</h3>
+            <div class="service-text-wrapper">
+              <p class="service-desc">
+                Studio approfondito degli spazi e dei flussi per creare ambienti interni armoniosi. 
+                Dalla concezione spaziale alla scelta minuziosa dei materiali e delle finiture, 
+                ogni dettaglio  pensato per riflettere la personalità di chi lo vive.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servizio 2 -->
+        <div class="service-image-card reveal-on-scroll">
+          <img src="assets/lato piscina sotto tettoia.jpg" alt="Progettazione d'Esterni" class="service-bg">
+          <div class="service-overlay"></div>
+          <div class="service-content">
+            <div class="service-icon">02</div>
+            <h3 class="service-title">Progettazione d'Esterni</h3>
+            <div class="service-text-wrapper">
+              <p class="service-desc">
+                Sviluppo di aree outdoor e landscape design in perfetta continuità con l'architettura. 
+                Che si tratti di un giardino tropicale, un patio o una terrazza, l'esterno 
+                diventa un'estensione naturale e scenografica della casa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servizio 3 -->
+        <div class="service-image-card reveal-on-scroll">
+          <img src="assets/frontale giorno.jpg" alt="Modellazione 3D e Render" class="service-bg">
+          <div class="service-overlay"></div>
+          <div class="service-content">
+            <div class="service-icon">03</div>
+            <h3 class="service-title">Modellazione 3D e Render</h3>
+            <div class="service-text-wrapper">
+              <p class="service-desc">
+                Restituzione visiva fotorealistica per esplorare il progetto prima della sua realizzazione. 
+                Studio della luce, inserimento di texture fisicamente corrette e virtual tour 
+                per un'esperienza immersiva totale.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servizio 4 -->
+        <div class="service-image-card reveal-on-scroll">
+          <img src="assets/camera da letto vista  frontale.RGB_color.png" alt="Consulenza d'Arredo" class="service-bg">
+          <div class="service-overlay"></div>
+          <div class="service-content">
+            <div class="service-icon">04</div>
+            <h3 class="service-title">Consulenza d'Arredo</h3>
+            <div class="service-text-wrapper">
+              <p class="service-desc">
+                Servizio di home styling e direzione creativa per la scelta di arredi, illuminazione, 
+                tessuti e complementi. Una curatela attenta per conferire agli ambienti 
+                quell'atmosfera esclusiva e raffinata che li rende unici.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Servizio 5 -->
+        <div class="service-image-card reveal-on-scroll">
+          <img src="assets/Image8.png" alt="Design di Prodotto" class="service-bg" style="object-position: center 70%;">
+          <div class="service-overlay"></div>
+          <div class="service-content">
+            <div class="service-icon">05</div>
+            <h3 class="service-title">Design di Prodotto</h3>
+            <div class="service-text-wrapper">
+              <p class="service-desc">
+                Ideazione e sviluppo di oggetti, arredi e complementi d'uso quotidiano. 
+                Dallo studio del concept al disegno esecutivo, progettiamo singoli elementi 
+                focalizzandoci sulla fluidità delle forme, l'ergonomia e l'assenza di spigoli.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+              <footer>
+    <div class="footer-content">
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="progetti.html">Progetti</a>
+        <a href="servizi.html">Servizi</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="assets/logo.svg" alt="tundi logo">
+        </a>
+      </div>
+      <div class="footer-contacts">
+        <div class="footer-contact-links">
+          <a href="mailto:studioform@tundi.it">E-mail: studioform@tundi.it</a>
+          <a href="tel:+393473747505">tel: +39 3473747505</a>
+          <a href="https://instagram.com/tundi_studioform" target="_blank">instagram: tundi_studioform</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js?v=272"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

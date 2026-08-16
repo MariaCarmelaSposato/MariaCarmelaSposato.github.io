@@ -1,0 +1,2899 @@
+/* --- DYNAMIC THEME LOGO VARIABLES --- */
+:root {
+  --nav-bg-color: transparent;
+  --nav-link-color: var(--accent-burgundy);
+  
+  /* Colori standard del logo (Default) */
+  --logo-t: #7698a2;
+  --logo-u: #935e75;
+  --logo-n: #7698a2;
+  --logo-d: #7796a0;
+  --logo-i: #7796a0;
+}
+
+/* THEME EXHIBIT */
+body.theme-exhibit {
+  --bg-color: rgb(118, 152, 162);
+  --accent-burgundy: rgb(157, 189, 199);
+  --category-overlay-color: rgb(157, 189, 199);
+  --text-main: rgb(215, 201, 207);
+  --nav-bg-color: transparent;
+  --nav-link-color: var(--accent-burgundy);
+  
+  --logo-t: rgb(157, 189, 199);
+  --logo-u: rgb(215, 201, 207);
+  --logo-n: rgb(157, 189, 199);
+  --logo-d: rgb(157, 189, 199);
+  --logo-i: rgb(157, 189, 199);
+}
+
+/* THEME PRODUCT */
+body.theme-product {
+  --bg-color: rgb(149, 92, 117);
+  --accent-burgundy: rgb(215, 201, 207);
+  --category-overlay-color: rgb(215, 170, 185);
+  --text-main: rgb(157, 189, 199);
+  --nav-bg-color: transparent;
+  --nav-link-color: var(--accent-burgundy);
+  
+  --logo-t: rgb(215, 201, 207);
+  --logo-u: rgb(157, 189, 199);
+  --logo-n: rgb(215, 201, 207);
+  --logo-d: rgb(215, 201, 207);
+  --logo-i: rgb(215, 201, 207);
+}
+
+/* THEME OUTDOOR */
+body.theme-outdoor {
+  --bg-color: rgb(118, 152, 162);
+  --accent-burgundy: rgb(157, 189, 199);
+  --category-overlay-color: rgb(240, 230, 205);
+  --text-main: rgb(240, 230, 205);
+  --nav-bg-color: transparent;
+  --nav-link-color: var(--accent-burgundy);
+  
+  --logo-t: rgb(157, 189, 199);
+  --logo-u: rgb(240, 230, 205);
+  --logo-n: rgb(157, 189, 199);
+  --logo-d: rgb(157, 189, 199);
+  --logo-i: rgb(157, 189, 199);
+}
+
+/* THEME INTERIOR */
+body.theme-interior {
+  --bg-color: rgb(149, 92, 117);
+  --accent-burgundy: rgb(240, 230, 205);
+  --category-overlay-color: rgb(149, 92, 117);
+  --text-main: rgb(157, 189, 199);
+  --nav-bg-color: transparent;
+  --nav-link-color: var(--accent-burgundy);
+  
+  --logo-t: rgb(240, 230, 205);
+  --logo-u: rgb(157, 189, 199);
+  --logo-n: rgb(240, 230, 205);
+  --logo-d: rgb(240, 230, 205);
+  --logo-i: rgb(240, 230, 205);
+}
+
+#tundi-logo .logo-t { fill: var(--logo-t); transition: fill 0.4s ease; }
+#tundi-logo .logo-u { fill: var(--logo-u); transition: fill 0.4s ease; }
+#tundi-logo .logo-n { fill: var(--logo-n); transition: fill 0.4s ease; }
+#tundi-logo .logo-d { fill: var(--logo-d); transition: fill 0.4s ease; }
+#tundi-logo .logo-i { fill: var(--logo-i); transition: fill 0.4s ease; }
+
+.nav-brand svg {
+    height: 33px;
+    width: auto;
+    display: block;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  /* Colors */
+  --bg-color: #ffffff; /* Bianco puro */
+  --panna: #F2E3D1; /* Panna (kept for reference if needed) */
+  --text-main: #7796A0; /* Blu */
+  --accent-burgundy: #935E75; /* Borgogna */
+  --accent-cyan: #9DBCC7; /* Azzurro */
+  --accent-pink: #D7C9CF; /* Rosa */
+
+  /* Global radiuses to ensure no sharp edges */
+  --radius-extreme: 9999px; /* Pill shapes for buttons and small badges */
+  --radius-large: 60px;     /* For sections, large cards */
+  --radius-medium: 30px;    /* For images or smaller cards */
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fix baseline gap: le immagini inline lasciano uno spazio bianco sotto */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: none; /* Nascondi il cursore originale */
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  width: 25px; /* Dimensione base 25px solida */
+  height: 25px;
+  background-color: var(--accent-burgundy);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Stato espanso (60px) e semitrasparente su immagini/link */
+.custom-cursor.hover {
+  width: 60px; /* Grande il doppio (60px) */
+  height: 60px;
+  background-color: rgba(147, 94, 117, 0.5); /* Burgundy al 50% di opacitÃ  */
+  border: 1px solid var(--accent-burgundy);
+}
+
+/* Assicurati che gli elementi cliccabili non mostrino il cursore */
+a, button, .hero-item, .portfolio-item, .nav-brand, .category-image {
+  cursor: none !important;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--accent-burgundy);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+p {
+  margin-bottom: 0.2rem;
+  font-size: 1.125rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Base UI Elements */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--accent-burgundy);
+  color: var(--bg-color);
+  border-radius: var(--radius-extreme);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(147, 94, 117, 0.2);
+}
+
+.btn:hover {
+  background-color: var(--text-main);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(119, 150, 160, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--accent-cyan);
+  color: var(--text-main);
+  box-shadow: 0 4px 15px rgba(157, 188, 199, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: transparent;
+  transform: translateY(-2px);
+  color: var(--accent-burgundy);
+}
+
+/* Navigation: Full Width */
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nav-bg-color);
+  transition: background-color 0.4s ease;
+  padding: 2rem 5%; /* Spazio dai bordi laterali e dall'alto */
+  z-index: 9000;
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex: 1; /* Garantisce che i due lati occupino lo stesso spazio */
+}
+
+/* Menu di sinistra allineato a sinistra */
+nav > .nav-links:first-of-type {
+  justify-content: flex-start;
+}
+
+/* Menu di destra allineato a destra */
+nav > .nav-links:last-of-type {
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: var(--nav-link-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-extreme);
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(157, 188, 199, 0.15); /* light cyan overlay */
+  color: var(--text-main);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  margin: 0 2rem;
+}
+
+.nav-brand:hover {
+  transform: scale(1.05);
+}
+
+.nav-brand img {
+  height: 33px;
+  width: auto;
+  display: block;
+}
+
+/* Dropdown */
+.dropdown-container {
+  position: relative;
+}
+
+/* Freccetta indicatrice per il menu a tendina */
+.dropdown-container > a::after {
+  content: "";
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+  border-top: 5px solid var(--accent-burgundy);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  transition: transform 0.3s ease;
+}
+
+/* Rotazione freccetta quando la tendina si apre */
+.dropdown-container:hover > a::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  background: var(--bg-color); /* Sfondo dinamico del tema */
+  backdrop-filter: blur(20px);
+  padding: 1rem;
+  border-radius: var(--radius-medium);
+  box-shadow: 0 15px 35px rgba(147, 94, 117, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 100%;
+  height: 25px;
+}
+.dropdown-container:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(5px);
+  pointer-events: auto;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  color: var(--nav-link-color) !important; /* Force readable color even when nav is dark */
+}
+
+/* Layout */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-full {
+  width: 100%;
+  padding: 0 1rem; /* Stesso spazio laterale del gap tra le immagini (1rem) */
+  margin: 0 auto; 
+  box-sizing: border-box;
+}
+
+section {
+  padding: 150px 0 100px 0; /* padding for fixed nav */
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Allineamento dall'alto per controllo spazi preciso */
+  padding-top: 0; 
+  padding-bottom: 0px; /* Azzerato per compattezza */
+  text-align: center;
+}
+
+.hero-quote {
+  margin: 3rem auto 4rem auto; /* Spazio sopra ridotto perchÃ© sta dopo le immagini */
+  text-align: center;
+}
+
+.hero-quote h1 {
+  margin-bottom: 1rem;
+}
+
+.hero-quote p {
+  font-size: 2.1rem;
+  font-weight: 300;
+  color: var(--accent-burgundy);
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.hero-quote cite {
+  display: block;
+  font-size: 1rem;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-burgundy);
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+
+/* 3-Column Pill Grid */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem; /* Separazione ridotta a metÃ  (1rem) */
+  width: 100%;
+  margin-top: 120px; /* Spazio per la NavBar che sta fissa in alto */
+}
+
+.hero-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-item {
+  cursor: pointer;
+  position: relative; /* Necessario per il ::after */
+  overflow: hidden;
+  border-radius: 50% 50% 12px 12px / 40% 40% 12px 12px; /* Stessa forma ad arco */
+}
+
+/* Overlay burgundy sempre presente (leggero), si intensifica al hover */
+.hero-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(147, 94, 117, 0.5), transparent);
+  opacity: 0.6;
+  transition: opacity 0.4s ease, background 0.4s ease;
+  pointer-events: none;
+}
+
+.hero-item:hover::after {
+  background: linear-gradient(to top, rgba(147, 94, 117, 0.8), transparent);
+  opacity: 1;
+}
+
+.hero-image-vertical {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 50% 50% 12px 12px / 40% 40% 12px 12px;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s ease;
+}
+
+.hero-image-vertical:hover {
+  transform: scale(1.05); /* Zoom dentro il riquadro, nessuno spazio vuoto */
+}
+
+/* Decorative background circle */
+.bg-blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: transparent;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  filter: blur(80px);
+  opacity: 0.6;
+}
+
+/* Portfolio Container */
+.portfolio-section {
+  padding-top: 10rem; /* Aumentato per evitare sovrapposizioni con la nav */
+}
+
+/* Rimuovi lo spazio extra solo se il banner della categoria  effettivamente attivo */
+.portfolio-section.has-hero {
+  padding-top: 0 !important;
+}
+
+/* Category Hero Intro */
+.category-hero-section {
+  padding-top: 10rem; /* Spazio per la nav bar aumentato */
+  padding-bottom: 0; /* Rimosso spazio extra per simmetria perfetta */
+  width: 100%;
+}
+
+.category-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  gap: 2.5rem;
+  animation: fadeUp 0.8s ease forwards;
+  width: 100%;
+}
+
+.category-hero-image {
+  width: 90vw; /* Larga 90% dello schermo */
+  max-width: 90vw;
+  margin: 0 auto; /* Centratura naturale essendo fuori dal container */
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-large);
+  box-shadow: 0 20px 40px rgba(147, 94, 117, 0.15);
+}
+
+/* Overlay burgundy per richiamare lo stile della homepage */
+.category-hero-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  background: linear-gradient(to top, var(--accent-burgundy), transparent);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.category-hero-image img {
+  width: 100%;
+  height: auto;
+  max-height: 450px; /* Limite massimo per mantenere l'effetto banner */
+  object-fit: cover; /* Riempie lo spazio senza deformare */
+  object-position: center; /* Centra l'inquadratura */
+  display: block;
+}
+
+.category-hero-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto; /* Rimosso margin-top per equidistanza perfetta col gap */
+  padding: 0 2rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.category-hero-content h1 {
+  font-size: 3.5rem;
+  color: var(--accent-burgundy);
+  margin: 0; /* Rimosso per non falsare le distanze esterne */
+}
+
+.category-hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  opacity: 0.9;
+  margin: 1rem 0 0 0; /* Solo spazio interno tra titolo e testo */
+}
+/* Portfolio Filters */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: var(--text-main);
+  border: 2px solid var(--accent-cyan);
+  border-radius: var(--radius-extreme);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--accent-cyan);
+  color: white;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.portfolio-item {
+  position: relative;
+  border-radius: 50% 50% 12px 12px / 40% 40% 12px 12px; /* Arco sopra */
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4/5;
+  transition: transform 0.4s ease;
+}
+
+/* Variante con arco verso il basso */
+.portfolio-item.arch-inverted {
+  border-radius: 12px 12px 50% 50% / 12px 12px 40% 40%;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  border-radius: var(--radius-medium); /* Ensures no sharp corners even during transforms */
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(147, 94, 117, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end; /* Testo in basso di default */
+  justify-content: center; /* Centra orizzontalmente */
+  text-align: center;
+  padding: 2.5rem;
+}
+
+/* Regole per il progetto capovolto */
+.arch-inverted .portfolio-overlay {
+  align-items: flex-start; /* Sposta il testo in alto */
+  background: linear-gradient(to bottom, rgba(147, 94, 117, 0.8), transparent); /* Inverte l'ombra */
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-info h3 {
+  color: #ffffff !important;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-info p {
+  color: #ffffff !important;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--bg-color);
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  overflow: hidden; /* Blocco scroll, modalitÃ  tutto schermo */
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: auto; /* Permette lo scroll se l'immagine ingrandita  piÃ¹ grande dello schermo */
+}
+
+.lightbox-content img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  z-index: 1;
+  border-radius: var(--radius-medium);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  cursor: none; /* Nasconde il cursore quando si usa la lente */
+  margin: auto;
+}
+
+/* Lente di Ingrandimento */
+.img-magnifier-glass {
+  position: fixed;
+  border: 4px solid var(--accent-burgundy);
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: none;
+  pointer-events: none; /* Fondamentale per non bloccare il mousemove sull'immagine */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 100000;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+
+/* Bottone Scopri di piÃ¹ */
+.lightbox-more {
+  position: absolute;
+  bottom: 3rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-burgundy);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(240, 230, 205, 0.5); /* Vetro Panna */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: var(--radius-extreme);
+  box-shadow: 0 8px 32px 0 rgba(147, 94, 117, 0.1);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.4s ease;
+}
+
+.lightbox-more:hover {
+  background: rgba(240, 230, 205, 0.8);
+  transform: translateY(-5px);
+}
+
+/* Finestra Testuale (Inizialmente nascosta) */
+.lightbox-text {
+  position: absolute;
+  bottom: 8rem; /* Appare sopra il bottone */
+  text-align: center;
+  background: rgba(240, 230, 205, 0.75); /* Equilibrio tra vetro e leggibilitÃ  */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 2rem 3rem;
+  border-radius: var(--radius-medium);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  z-index: 15;
+  /* Nascosta di default in basso */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(40px);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lightbox-text.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.lightbox-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-burgundy);
+}
+
+.lightbox-text p {
+  font-size: 1.1rem;
+  color: var(--accent-burgundy);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lightbox-close {
+  position: fixed; /* Rimane visibile in alto a destra anche nascondendo la grafica */
+  top: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  background: var(--text-main);
+  border: none;
+  color: var(--bg-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.lightbox-close:hover {
+  background: var(--accent-burgundy);
+  color: var(--bg-color);
+}
+
+/* Contact Form */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8rem; /* Spazio per evitare la sovrapposizione col menu */
+  text-align: center;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 3rem;
+  background: white;
+  padding: 3rem;
+  border-radius: var(--radius-large);
+  box-shadow: 0 20px 50px rgba(157, 188, 199, 0.15);
+}
+
+.form-group {
+  margin-bottom: 0.2rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--accent-burgundy);
+  margin-left: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  border: 2px solid var(--accent-pink);
+  border-radius: var(--radius-extreme);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  color: var(--text-main);
+  background-color: var(--bg-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group textarea {
+  border-radius: var(--radius-medium);
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 4px rgba(157, 188, 199, 0.2);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 5%; 
+  background-color: var(--footer-bg, #F2E3D1) !important;
+  
+  color: var(--footer-text, #935E75) !important;
+  
+  border-top-left-radius: var(--radius-large);
+  border-top-right-radius: var(--radius-large);
+  margin-top: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* Rimosso max-width per dare spazio sufficiente alle righe orizzontali */
+}
+
+.footer-logo,
+.footer-nav,
+.footer-contacts {
+  flex: 1; /* Suddivide lo spazio in 3 parti per centrare il menu */
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center; /* Logo al centro */
+  align-items: center;
+}
+
+.footer-logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo a:hover {
+  opacity: 0.7;
+}
+
+.footer-logo img {
+  height: 40px; 
+  width: auto;
+  opacity: 0.9;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: flex-start; /* Menu a sinistra */
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav a,
+.footer-contact-links a {
+  color: var(--footer-text, #935E75) !important;
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 0.95rem; 
+  transition: opacity 0.3s ease;
+}
+
+.footer-nav a:hover,
+.footer-contact-links a:hover {
+  opacity: 0.6;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: row; /* Contenitore orizzontale per sicurezza */
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer-contact-links {
+  display: flex;
+  flex-direction: row; /* Contatti in orizzontale (sulla stessa fila) */
+  gap: 1.5rem; 
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap; /* Va a capo solo su schermi piccoli */
+}
+
+@media (max-width: 1200px) {
+  /* Se lo schermo si restringe, riduciamo il font per farceli stare su una riga */
+  .footer-nav a,
+  .footer-contact-links a {
+    font-size: 0.85rem; 
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .footer-nav {
+    justify-content: center;
+    gap: 1rem;
+  }
+  .footer-contacts,
+  .footer-contact-links {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* About Page Text Sizing for Mobile (Matches .project-text) */
+  .about-content p, .bio-text p, .manifesto-card p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+  .about-content .lead {
+    font-size: 1.2rem !important;
+  }
+  .about-content h1 {
+    font-size: 2.2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .bio-text h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+  }
+  .footer-contacts {
+    align-items: center;
+  }
+  .footer-contact-links {
+    align-items: center;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 95%;
+  }
+  .nav-brand {
+    margin: 0 !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero-col {
+    transform: none !important;
+  }
+  .hero-image-vertical {
+    border-radius: var(--radius-large);
+    aspect-ratio: 4/3;
+  }
+  .contact-form {
+    padding: 2rem;
+  }
+}
+/* Home-About Section */
+.home-about {
+  padding: 40px 5%;
+  margin: 30px auto 85px auto;
+}
+
+.home-about.container {
+  max-width: 1400px !important; /* Riporta alla larghezza standard del sito */
+  margin: 0 auto 85px auto;
+}
+
+.home-about .about-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-about .about-content {
+  flex: 0 0 40%;
+}
+
+.home-about h2 {
+  font-size: 2.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.home-about p {
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Effetto Teaser Sfumato */
+.text-teaser {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.text-teaser::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Altezza della sfumatura */
+  background: linear-gradient(transparent, #FDFCFB); /* Sfuma verso il colore di fondo panna */
+  pointer-events: none;
+}
+
+.home-about .about-image {
+  flex: 0 0 40%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-medium);
+}
+
+.home-about .about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Home-Categories Section */
+.home-categories {
+  padding-bottom: 200px;
+}
+
+.category-item {
+  margin-bottom: 120px;
+}
+
+/* Overlay Titolo Grande su Immagine */
+.category-image {
+  display: block; /* Essenziale ora che Ã¨ un tag <a> */
+  flex: 0 0 55%;
+  position: relative; /* Necessario per l'absolute dei titoli */
+  overflow: hidden;
+  border-radius: var(--radius-medium);
+}
+
+.category-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(147, 94, 117, 0.5), transparent); /* Sfumatura burgundy di base */
+  transition: opacity 0.4s ease, background 0.4s ease;
+  opacity: 0.6; /* Un velo leggero sempre presente per la leggibilitÃ  */
+}
+
+.category-image:hover::after {
+  background: linear-gradient(to top, rgba(147, 94, 117, 0.8), transparent); /* Si intensifica al passaggio */
+  opacity: 1;
+}
+
+.category-label-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white !important;
+  font-size: 4rem; 
+  font-weight: 300; /* Leggero e architettonico */
+  text-transform: none; /* Mantiene la prima lettera maiuscola dal codice HTML */
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+  line-height: 1.1;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  margin: 0;
+}
+
+.category-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.category-image:hover img {
+  transform: scale(1.05);
+}
+
+.category-split {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.category-text {
+  flex: 0 0 35%;
+}
+
+/* Reverse layout logic */
+.category-reverse .category-split {
+  flex-direction: row-reverse;
+}
+
+/* Scroll Animation Classes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ResponsivitÃ  Categorie */
+@media (max-width: 992px) {
+  .category-split {
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+  
+  .category-image, .category-text {
+    flex: 0 0 100%;
+  }
+  
+  .category-item {
+    margin-bottom: 80px;
+  }
+}
+
+/* --- START ABOUT PAGE STYLES --- */
+
+/* About Hero Split */
+.about-hero {
+  padding-top: 180px; /* Spazio per navbar */
+}
+
+.about-split {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--radius-large); /* Bordi molto curvi per About */
+}
+
+.about-content {
+  flex: 1.2;
+}
+
+.manifesto-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.lead {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* Manifesto Section */
+.manifesto-section {
+  background-color: rgba(240, 230, 205, 0.2); /* Molto leggero panna */
+  padding: 120px 4rem; /* PiÃ¹ aria sopra e ai lati */
+  border-radius: var(--radius-large);
+  margin: 40px auto;
+  text-align: center;
+}
+
+.section-title {
+  margin-bottom: 4rem; /* PiÃ¹ distacco dal testo delle card */
+}
+
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3.5rem; /* PiÃ¹ spazio tra un pilastro e l'altro */
+  margin-top: 2rem;
+}
+
+.manifesto-card {
+  padding: 4.5rem 3.5rem; /* Card molto piÃ¹ spaziose ed eleganti */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.manifesto-card.glass {
+  background: rgba(242, 227, 209, 0.4); /* Panna Glassmorphism */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-medium);
+  box-shadow: 0 8px 32px 0 rgba(147, 94, 117, 0.05);
+  color: var(--text-main);
+}
+
+.manifesto-card:hover {
+  transform: translateY(-10px);
+  background: rgba(242, 227, 209, 0.6);
+}
+
+.manifesto-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Bio Section */
+.bio-section {
+  padding: 100px 0;
+  max-width: 900px !important;
+  margin: 0 auto;
+}
+
+.bio-text p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  margin-bottom: 2rem;
+}
+
+.bio-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.project-content {
+  max-width: 1200px !important; /* Allargato per ospitare le due colonne */
+  margin-bottom: 8rem;
+}
+
+.project-split {
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.project-text h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.project-text h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: transparent;
+}
+
+.project-text p, .project-text ul, .project-text li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  text-align: left;
+}
+
+.project-plans {
+  width: 100%;
+  min-width: 0;
+}
+
+.plans-placeholder {
+  background: rgba(147, 94, 117, 0.03);
+  border: 1px solid rgba(147, 94, 117, 0.1);
+  padding: 6rem 2rem;
+  text-align: center;
+  border-radius: var(--radius-medium);
+  color: var(--accent-burgundy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+/* Responsive adjustment for split layout */
+@media (max-width: 992px) {
+  .project-split {
+    grid-template-columns:  40% 60% !important;
+    gap: 1rem !important; /* Spazio strettissimo per farli entrare */
+    width: 100%;
+  }
+  
+  /* Rimpicciolire il testo per non farlo sbordare */
+  .project-text h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .project-text p, .project-text ul, .project-text li {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    
+  }
+  
+  /* Assicurarsi che le immagini non sbordino */
+  .project-plans img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+.project-gallery {
+  padding-bottom: 10rem;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.gallery-placeholder {
+  background: rgba(128, 128, 128, 0.2);
+  border: 1px dashed var(--accent-pink);
+  padding: 8rem;
+  text-align: center;
+  border-radius: var(--radius-large);
+  color: var(--accent-burgundy);
+}
+
+.project-image-full {
+  width: 100%;
+  border-radius: var(--radius-large);
+  box-shadow: 0 20px 50px rgba(147, 94, 117, 0.1);
+}
+
+/* Project Banner Styles */
+.project-banner-container {
+  width: 100%;
+  padding-top: 8rem; /* Spazio per navbar */
+}
+
+.project-banner-image {
+  width: 90vw;
+  max-width: 90vw;
+  margin: 0 auto;
+  aspect-ratio: 21 / 8;
+  min-height: 400px; /* Protezione per Edge */
+  overflow: hidden;
+  border-radius: var(--radius-large);
+  box-shadow: 0 20px 40px rgba(147, 94, 117, 0.15);
+  position: relative; 
+  background-color: #f0f0f0;
+}
+
+.project-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: color-mix(in srgb, var(--category-overlay-color, var(--accent-burgundy)) 40%, transparent); /* Overlay burgundy per contrasto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.project-banner-overlay .project-header h1 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.project-banner-overlay .project-subtitle {
+  color: white;
+  opacity: 0.9;
+}
+
+.project-banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* Essenziale per Edge */
+  object-position: center;
+}
+
+/* Adjust Hero padding when preceded by a banner */
+.project-banner-container + .project-hero {
+  padding-top: 3rem;
+}
+
+.project-credits {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(147, 94, 117, 0.1);
+}
+
+.project-credits p {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem; /* Leggero spazio tra le righe */
+  color: var(--text-color);
+  opacity: 0.8;
+  text-align: left;
+  white-space: nowrap; /* Evita l'andata a capo per nomi lunghi */
+}
+
+.project-credits p span {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--accent-burgundy);
+  margin-right: 0.5rem;
+}
+
+.plan-item {
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.plan-image-wrapper {
+  position: relative;
+  overflow: hidden; /* Torniamo a hidden per la massima pulizia */
+  border-radius: var(--radius-medium);
+  cursor: pointer;
+  width: 100%;
+  padding: 1.5rem; /* Cornice di protezione per il disegno */
+  background: white; /* Sfondo neutro per far risaltare il disegno */
+  box-shadow: 0 5px 20px rgba(147, 94, 117, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotspot-number {
+  position: absolute;
+  color: var(--bg-color); 
+  background-color: var(--accent-burgundy);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  font-family: 'Outfit', sans-serif;
+}
+
+.legend-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--accent-burgundy);
+  color: var(--bg-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 12px;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Sfumatura borgogna solo sull'immagine */
+.plan-image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, var(--accent-burgundy), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.plan-image-wrapper:hover::after {
+  opacity: 0.6;
+}
+
+.plan-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.plan-image-wrapper:hover img {
+  transform: scale(1.02);
+}
+
+.plan-caption {
+  margin-top: 1.2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-burgundy);
+  text-align: right;
+  opacity: 0.8;
+}
+/* Sezioni Scroll Orizzontale */
+.sections-scroll-wrapper {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.technical-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-burgundy);
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.sections-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding-bottom: 2rem; /* PiÃ¹ spazio per la barra piÃ¹ spessa */
+  scroll-snap-type: x mandatory;
+  scrollbar-width: auto;
+  scrollbar-color: #ffffff transparent;
+}
+
+/* Custom Scrollbar per Chrome/Safari/Edge */
+.sections-scroll-container::-webkit-scrollbar {
+  height: 14px; /* Barra molto spessa e solida */
+}
+
+.sections-scroll-container::-webkit-scrollbar-track {
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
+}
+
+.sections-scroll-container::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Piccolo bordo per definizione */
+}
+
+.section-scroll-item {
+  flex: 0 0 100%; /* Una sezione alla volta a piena larghezza del contenitore */
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Forza tutti i riquadri delle sezioni ad avere la stessa dimensione */
+.section-scroll-item .plan-image-wrapper {
+  flex-grow: 1; /* Permette al riquadro di espandersi per occupare tutto lo spazio verticale */
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.section-scroll-item .plan-image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto; /* Evita deformazioni */
+  height: auto;
+  object-fit: contain; /* Garantisce che il disegno sia tutto visibile */
+}
+
+/* Modificatore per disegni che devono riempire tutto il riquadro (es. viste assonometriche renderizzate) */
+.plan-image-wrapper.full-bleed {
+  padding: 0;
+  background: var(--nav-bg-color);
+  transition: background-color 0.4s ease;
+}
+.section-scroll-item .plan-image-wrapper.full-bleed {
+  
+  height: auto; /* Adatta il riquadro alle proporzioni dell'immagine */
+}
+.plan-image-wrapper.full-bleed img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.scroll-hint {
+  font-size: 0.9rem; /* Testo piÃ¹ grande e leggibile */
+  color: var(--accent-burgundy); /* Cambiato colore per richiamare il brand */
+  opacity: 0.8;
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+
+
+/* Project Gallery Styles */
+.gallery-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* Spazio tra le righe della galleria */
+  margin-top: 3rem;
+}
+
+.gallery-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-row-1 {
+  width: 100%;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-medium);
+  cursor: pointer;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1 / 1; /* Forza i quadrati */
+  background: white;
+  box-shadow: 0 5px 20px rgba(147, 94, 117, 0.05);
+}
+
+.gallery-item-full {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-medium);
+  cursor: pointer;
+  width: 100%;
+  aspect-ratio: 1920 / 1080; /* Formato panoramico */
+  background: white;
+  box-shadow: 0 10px 30px rgba(147, 94, 117, 0.08);
+}
+
+.gallery-item img, .gallery-item-full img, .gallery-item video, .gallery-item-full video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img, .gallery-item-full:hover img, .gallery-item:hover video, .gallery-item-full:hover video {
+  transform: scale(1.03);
+}
+
+.gallery-item::after, .gallery-item-full::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, var(--category-overlay-color, var(--accent-burgundy)), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.gallery-item:hover::after, .gallery-item-full:hover::after {
+  opacity: 0.5;
+}
+
+@media (max-width: 992px) {
+  .gallery-row-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+  .gallery-row-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+  .gallery-item {
+    border-radius: 8px !important; /* Arrotondamento piÃ¹ piccolo per riquadri piccoli */
+  }
+}
+
+.gallery-category-title {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-burgundy);
+  text-align: center;
+  margin: 6rem 0 3rem 0; /* Grande spazio prima del titolo, meno dopo */
+  position: relative;
+  width: 100%;
+}
+
+.gallery-category-title::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background: var(--accent-burgundy);
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   SERVICES PAGE (Interactive Image Layout)
+   ========================================================================== */
+
+.services-hero {
+  padding: 12rem 0 6rem;
+  text-align: center;
+  background: var(--bg-crema);
+  position: relative;
+}
+
+
+
+.services-hero .hero-subtitle {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  color: var(--text-main); /* Colore verdino-blu dei testi */
+  max-width: 100%; /* Espanso a tutta pagina per metterlo su un'unica linea */
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.services-section {
+  padding: 6rem 0 10rem;
+  background: var(--bg-crema);
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem; /* Distanza tra le card senza alcuna sovrapposizione */
+  padding: 2rem 0;
+}
+
+.service-image-card {
+  position: relative;
+  border-radius: 200px; /* EstremitÃ  stondate (pillola orizzontale) */
+  overflow: hidden;
+  height: 450px; 
+  width: 100%; /* Occupa tutta la pagina */
+  box-shadow: 0 15px 40px rgba(74, 33, 49, 0.15);
+}
+
+.service-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 1;
+}
+
+.service-image-card:hover .service-bg {
+  transform: scale(1.08);
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Overlay uniforme per far risaltare il testo al centro */
+  background: rgba(74, 33, 49, 0.4);
+  transition: background 0.6s ease;
+  z-index: 2;
+}
+
+.service-image-card:hover .service-overlay {
+  background: rgba(74, 33, 49, 0.85);
+}
+
+.service-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 3.5rem;
+  color: #fff;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Testo centrato verticalmente */
+  align-items: center; /* Testo centrato orizzontalmente */
+  text-align: center;
+}
+
+.service-icon {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+/* Scroll reveal piÃ¹ accentuato specifico per le card orizzontali */
+.service-image-card.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(120px);
+  transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.service-image-card.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-title {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin-bottom: 0;
+  transition: transform 0.5s ease;
+}
+
+.service-text-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.service-image-card:hover .service-text-wrapper {
+  max-height: 250px;
+  opacity: 1;
+  margin-top: 1.5rem;
+}
+
+.service-desc {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+  .services-grid {
+    gap: 3rem;
+    padding: 0;
+  }
+  
+  .service-image-card {
+    height: 500px;
+    width: 90%;
+    align-self: center !important;
+    border-radius: 60px;
+  }
+  
+  .service-image-card:nth-child(even) {
+    margin-top: 0;
+  }
+  
+  .service-content {
+    padding: 2.5rem 2rem;
+  }
+  
+  /* Su mobile, l'interazione hover  difficile, mostriamo una via di mezzo fissa o un testo leggermente visibile */
+  .service-text-wrapper {
+    max-height: 250px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+  
+  .service-overlay {
+    background: linear-gradient(to top, rgba(74, 33, 49, 0.95) 0%, rgba(74, 33, 49, 0.6) 60%, transparent 100%);
+  }
+}
+
+
+
+
+
+/* --- MOBILE RESPONSIVENESS OVERRIDES (Scaled Desktop Nav & Adjustments) --- */
+@media (max-width: 900px) {
+  /* Keep standard nav visible and in one line */
+  nav {
+    flex-wrap: nowrap !important;
+    
+    justify-content: space-between !important;
+    align-items: center;
+    padding: 1rem 2% !important;
+    width: 100%;
+    gap: 0.2rem;
+  }
+
+  /* Center logo */
+  .nav-brand {
+    margin: 0 !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  .nav-brand img, .nav-brand svg {
+    height: 20px; /* Smaller logo */
+  }
+
+  /* Scale down links */
+  .nav-links {
+    display: flex !important;
+    gap: 0.3rem !important;
+  }
+  
+  .nav-links a {
+    font-size: 0.9rem !important;
+    padding: 0.4rem 0.6rem !important;
+  }
+  
+  /* Dropdown adjustment */
+  .dropdown-menu {
+    min-width: 150px;
+  }
+  .dropdown-menu a {
+    font-size: 0.8rem;
+  }
+
+  /* Typography Scaling */
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  .category-label-overlay { font-size: 2rem; }
+  .hero-quote p { font-size: 1.5rem; }
+
+  /* Spacing Reductions */
+  section { padding: 80px 0 60px 0; }
+  .portfolio-section { padding-top: 80px; }
+  .category-hero-section { padding-top: 80px; }
+  .home-categories { padding-bottom: 80px; }
+  .project-hero { padding-top: 7rem; margin-bottom: 3rem; }
+  .project-banner-container { padding-top: 5rem; }
+  .about-hero { padding-top: 100px; }
+  .manifesto-section { padding: 60px 2rem; margin: 20px auto; }
+  
+  /* Portfolio Grid */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Project Detail Grid */
+  .gallery-row-3, .gallery-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .service-image-card {
+    height: 400px; /* Reduce height on mobile */
+    width: 100%;
+    border-radius: 40px;
+  }
+
+  .category-hero-content h1 { font-size: 2.2rem; }
+  .category-hero-content p { font-size: 0.9rem; line-height: 1.4; }
+  #default-portfolio-header h1 { font-size: 2.5rem; }
+  #default-portfolio-header p { font-size: 0.9rem; line-height: 1.4; }
+}
+
+@media (max-width: 600px) {
+  .hero-image-vertical {
+    border-radius: var(--radius-medium);
+     
+  }
+  .contact-form {
+    padding: 2rem 1.5rem;
+  }
+  
+  /* Ultra small screens */
+  .nav-links a {
+    font-size: 0.8rem !important;
+    padding: 0.3rem 0.4rem !important;
+  }
+  .nav-brand img, .nav-brand svg {
+    height: 20px; 
+  }
+}
+
+
+/* --- HERO GRID MOBILE (Keep 3 columns) --- */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .hero-image-vertical {
+    aspect-ratio: 3/4 !important; /* Restore the vertical arch shape instead of square */
+  }
+}
+
+
+/* --- HERO IMAGE BORDER FIX --- */
+@media (max-width: 900px) {
+  .hero-image-vertical {
+    border-radius: 50% 50% 12px 12px / 40% 40% 12px 12px !important;
+    aspect-ratio: 3/4 !important;
+  }
+}
+
+
+/* --- MOBILE SPACING & QUOTE ADJUSTMENTS --- */
+@media (max-width: 900px) {
+  /* Reduce gap between nav and arches */
+  .hero-grid {
+    margin-top: 100px !important;
+  }
+  
+  /* Reduce quote font size */
+  .hero-quote p {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+  .hero-quote cite {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Remove 100vh min-height to prevent huge gaps at the bottom of hero */
+  .hero {
+    min-height: auto !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* Reduce gap between quote and the next section (.home-about) */
+  .hero-quote {
+    margin-bottom: 0 !important;
+    margin-top: 2rem !important;
+  }
+  
+  .home-about {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  margin-bottom: 70px !important;
+  }
+}
+
+
+/* Exact match for About Image to behave like Category Image */
+.about-image-exact {
+  flex: 0 0 55%;
+  overflow: hidden;
+  border-radius: var(--radius-medium);
+}
+.about-image-exact img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .about-image-exact {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+
+/* Specific sizing for the long About overlay title */
+.about-overlay-title {
+  font-size: 2.8rem !important;
+  line-height: 1.1;
+  width: 90%;
+}
+@media (max-width: 900px) {
+  .about-overlay-title {
+    font-size: 1.8rem !important;
+  }
+}
+
+
+/* --- MOBILE: ABOUT SECTION FIX --- */
+@media (max-width: 992px) {
+  /* Put the image on top of the text */
+  .home-about .about-split {
+    flex-direction: column-reverse !important;
+    gap: 2rem !important;
+  }
+  
+  /* Make sure the image acts like the category images on mobile */
+  .home-about .about-image {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+  
+  .home-about .about-image img {
+    aspect-ratio: 16 / 9 !important;
+    border-radius: var(--radius-medium) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  
+  /* Reset the title to mobile proportions */
+  .home-about h2 {
+    font-size: 1.6rem !important;
+    text-align: left !important;
+  }
+  
+  .home-about .about-content {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    padding: 0 1rem;
+  }
+}
+
+
+/* --- TOUCH DROPDOWN SUPPORT --- */
+.dropdown-container.touch-open .dropdown-menu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(5px) !important;
+  pointer-events: auto !important;
+}
+.dropdown-container.touch-open > a::after {
+  transform: rotate(180deg) !important;
+}
+
+
+/* --- MOBILE FOOTER SPACING --- */
+@media (max-width: 900px) {
+  /* Remove excessive padding at the bottom of the home page before the footer */
+  .home-categories {
+    padding-bottom: 20px !important;
+  }
+  
+  /* Remove margin from the last category item to bring the footer closer */
+  .category-item:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+
+/* --- MOBILE ABOUT.HTML FIXES (OVERRIDE) --- */
+@media (max-width: 992px) {
+  .about-split {
+    flex-direction: column;
+    text-align: left;
+  }
+  .about-image {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  /* Fix "Il nostro approccio" grid: 1 column, smaller gaps and paddings */
+  .manifesto-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .manifesto-card {
+    padding: 2rem 1.5rem !important;
+  }
+  .manifesto-card h3 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .manifesto-card p {
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Ensure "La visione dello studio" text is not stuck to the borders */
+  .bio-section {
+    padding: 40px 3rem 80px 3rem !important;
+    text-align: left;
+  }
+}
+
+
+/* --- MANIFESTO HEADER DESKTOP --- */
+.manifesto-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  text-align: left;
+}
+.manifesto-header .section-title {
+  margin-bottom: 0 !important;
+}
+.manifesto-intro {
+  max-width: 500px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .manifesto-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+
+/* Ensure Visione e Metodo stays on one line on mobile */
+@media (max-width: 992px) {
+  .manifesto-title {
+    font-size: 2.2rem !important;
+    white-space: nowrap !important;
+  }
+}
+
+
+/* --- MOBILE PORTFOLIO GRID 2 COLUMNS --- */
+@media (max-width: 992px) {
+  /* Force 2 columns on mobile */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+  
+  /* Adjust overlay text for 2-column width */
+  .portfolio-info h3 {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.3rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .portfolio-info p {
+    font-size: 0.6rem !important;
+    margin: 0 !important;
+  }
+  
+  .portfolio-overlay {
+    padding: 1rem !important;
+  }
+}
+
+
+/* --- MOBILE FILTERS AND PORTFOLIO RADIUS FIX --- */
+@media (max-width: 992px) {
+  /* Keep filters in a single row with horizontal scroll */
+  .filters {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1.5rem !important; /* PiÃ¹ spazio per poter toccare la barra comodamente */
+    gap: 0.5rem !important; /* Slightly tighter gap on mobile */
+    touch-action: pan-x; /* Assicura che il tocco sia riconosciuto per lo scroll orizzontale */
+  }
+  
+  /* Make scrollbar identical to the one in project detail pages */
+  .filters::-webkit-scrollbar {
+    height: 14px; /* Barra molto spessa e solida */
+  }
+  .filters::-webkit-scrollbar-track {
+    background: rgba(128, 128, 128, 0.2);
+    border-radius: 10px;
+  }
+  .filters::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Piccolo bordo per definizione */
+    pointer-events: auto !important;
+  }
+  .filters {
+    scrollbar-width: auto;  /* Firefox */
+    scrollbar-color: #ffffff transparent;
+  }
+
+  .filter-btn {
+    white-space: nowrap !important; /* Prevent text wrapping */
+    padding: 0.5rem 1rem !important; /* Slightly smaller padding */
+    font-size: 0.8rem !important;
+  }
+
+  /* Use the exact same border-radius as the computer version */
+  .portfolio-item {
+    border-radius: 50% 50% 12px 12px / 40% 40% 12px 12px !important;
+  }
+}
+
+/* Disable native drag for filter buttons to allow JS click-and-drag */
+.filter-btn {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
+/* Ensure the inverted arch works on mobile despite the previous !important override */
+@media (max-width: 992px) {
+  .portfolio-item.arch-inverted {
+    border-radius: 12px 12px 50% 50% / 12px 12px 40% 40% !important;
+  }
+}
+
+
+
+/* Visibility Utilities */
+@media (min-width: 993px) {
+  .mobile-only { display: none !important; }
+}
+@media (max-width: 992px) {
+  .desktop-only { display: none !important; }
+}
+
+/* ========================================= */
+/* FORCED DESKTOP LAYOUT ON MOBILE overrides */
+/* ========================================= */
+@media (max-width: 992px) {
+  /* Assicura che la griglia dei progetti non ritorni a 1 colonna a causa di regole precedenti */
+  .project-split {
+    grid-template-columns:  40% 60% !important;
+    gap: 1rem !important;
+  }
+  .gallery-row-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+  .gallery-row-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+
+  .project-banner-image {
+    min-height: 200px !important;
+  }
+  
+  /* Prevenire sbordamenti orizzontali del testo globale */
+
+  .project-text {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+
+  
+  /* Reduce banner text size */
+  .project-banner-overlay .project-header h1 { font-size: 2.2rem !important; }
+  .project-banner-overlay .project-subtitle { font-size: 1.0rem !important; }
+
+  .project-credits p {
+    font-size: clamp(0.6rem, 2.8vw, 0.75rem) !important;
+    white-space: normal !important;
+    padding-right: 1rem;
+    line-height: 1.4;
+  }
+  .project-credits p span {
+    font-size: 0.55rem !important;
+  }
+
+  /* Fix uneven spacing in mobile interleaved layout */
+  .project-split-mobile .project-text p:last-child {
+    margin-bottom: 0 !important;
+  }
+  .project-split-mobile .plan-item {
+    margin-bottom: 0 !important;
+  }
+  .project-split-mobile .sections-scroll-wrapper {
+    margin-top: 0 !important;
+  }
+
+  .project-content {
+    margin-bottom: 3rem !important;
+  }
+}
+
+/* Lightbox Navigation Buttons */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 4rem;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10000;
+  transition: opacity 0.5s ease, transform 0.3s ease;
+}
+.lightbox-prev {
+  left: 3rem;
+}
+.lightbox-next {
+  right: 3rem;
+}
+@media (min-width: 993px) {
+  .lightbox-nav { opacity: 0.8; }
+  .lightbox-nav:hover {
+  background: transparent;
+  color: var(--accent-burgundy);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+}
+@media (max-width: 992px) {
+  .lightbox-nav {
+    font-size: 3rem;
+    left: 0.5rem;
+    background: transparent !important;
+    color: var(--text-main) !important;
+  }
+  .lightbox-next {
+    right: 0.5rem;
+    left: unset;
+  }
+  /* Mobile: A scomparsa */
+  .lightbox-nav {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .lightbox-content.show-arrows .lightbox-nav {
+    opacity: 0.8;
+    pointer-events: auto;
+  }
+}
+
+
+
+/* Lightbox Lens Toggle Button */
+.lens-toggle-btn {
+  display: none; /* Nascosto su desktop */
+}
+@media (max-width: 992px) {
+  .lens-toggle-btn {
+    display: flex !important;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    height: 50px;
+    background: var(--text-main);
+  border: none;
+  color: var(--bg-color);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    z-index: 10001;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+  .lens-toggle-btn .lens-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lens-toggle-btn .lens-icon svg {
+    stroke: var(--accent-burgundy) !important;
+  }
+  .lens-toggle-btn.active {
+    background: var(--accent-burgundy);
+    border-color: var(--accent-burgundy);
+    color: var(--bg-color);
+  }
+  .lens-toggle-btn.active .lens-icon svg {
+    stroke: var(--bg-color) !important;
+  }
+}
+
+/* Forza i riquadri della galleria mobile ad essere quadrati uniformi */
+.gallery-grid-mobile .plan-image-wrapper.full-bleed {
+  
+  
+  
+  height: auto;
+}
+.gallery-grid-mobile .plan-image-wrapper.full-bleed img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+.concept-section {
+  max-width: 900px;
+  margin: 0 auto 6rem auto;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .concept-section {
+    margin: 0 auto 2rem auto;
+  }
+}
+
+.render-title {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+@media (max-width: 768px) {
+  .render-title {
+    margin-top: 4rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.gallery-section-grande {
+  margin-bottom: 8rem;
+}
+.gallery-section-piccolo {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+@media (max-width: 768px) {
+  .gallery-section-grande {
+    margin-bottom: 0;
+    padding-bottom: 0 !important;
+  }
+  .gallery-section-piccolo {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0 !important;
+  }
+}
+
+
+
+/* Fix per bug ereditarieta variabili in webkit-scrollbar su Windows */
+body.theme-interior .sections-scroll-container::-webkit-scrollbar-thumb,
+body.theme-interior .filters::-webkit-scrollbar-thumb,
+body.theme-product .sections-scroll-container::-webkit-scrollbar-thumb,
+body.theme-product .filters::-webkit-scrollbar-thumb,
+body.theme-exhibit .sections-scroll-container::-webkit-scrollbar-thumb,
+body.theme-exhibit .filters::-webkit-scrollbar-thumb,
+body.theme-outdoor .sections-scroll-container::-webkit-scrollbar-thumb,
+body.theme-outdoor .filters::-webkit-scrollbar-thumb {
+  background: #ffffff !important; /* Bianca globale come richiesto */
+}
+
+/* Sfumature dinamiche per categoria (Vista ALL) */
+.portfolio-item[data-category^="interior"] .portfolio-overlay { background: linear-gradient(to top, rgba(149, 92, 117, 0.95), transparent) !important; }
+.portfolio-item.arch-inverted[data-category^="interior"] .portfolio-overlay { background: linear-gradient(to bottom, rgba(149, 92, 117, 0.95), transparent) !important; }
+
+.portfolio-item[data-category^="product"] .portfolio-overlay { background: linear-gradient(to top, rgba(215, 170, 185, 0.95), transparent) !important; }
+.portfolio-item.arch-inverted[data-category^="product"] .portfolio-overlay { background: linear-gradient(to bottom, rgba(215, 170, 185, 0.95), transparent) !important; }
+
+.portfolio-item[data-category^="exhibit"] .portfolio-overlay { background: linear-gradient(to top, rgba(157, 189, 199, 0.95), transparent) !important; }
+.portfolio-item.arch-inverted[data-category^="exhibit"] .portfolio-overlay { background: linear-gradient(to bottom, rgba(157, 189, 199, 0.95), transparent) !important; }
+
+.portfolio-item[data-category^="outdoor"] .portfolio-overlay { background: linear-gradient(to top, rgba(240, 230, 205, 0.95), transparent) !important; }
+.portfolio-item.arch-inverted[data-category^="outdoor"] .portfolio-overlay { background: linear-gradient(to bottom, rgba(240, 230, 205, 0.95), transparent) !important; }
+
+/* Sfumature forzate quando un filtro e' attivo (Override) */
+body.theme-interior .portfolio-item .portfolio-overlay { background: linear-gradient(to top, rgba(149, 92, 117, 0.95), transparent) !important; }
+body.theme-interior .portfolio-item.arch-inverted .portfolio-overlay { background: linear-gradient(to bottom, rgba(149, 92, 117, 0.95), transparent) !important; }
+
+body.theme-product .portfolio-item .portfolio-overlay { background: linear-gradient(to top, rgba(215, 170, 185, 0.95), transparent) !important; }
+body.theme-product .portfolio-item.arch-inverted .portfolio-overlay { background: linear-gradient(to bottom, rgba(215, 170, 185, 0.95), transparent) !important; }
+
+body.theme-exhibit .portfolio-item .portfolio-overlay { background: linear-gradient(to top, rgba(157, 189, 199, 0.95), transparent) !important; }
+body.theme-exhibit .portfolio-item.arch-inverted .portfolio-overlay { background: linear-gradient(to bottom, rgba(157, 189, 199, 0.95), transparent) !important; }
+
+body.theme-outdoor .portfolio-item .portfolio-overlay { background: linear-gradient(to top, rgba(240, 230, 205, 0.95), transparent) !important; }
+body.theme-outdoor .portfolio-item.arch-inverted .portfolio-overlay { background: linear-gradient(to bottom, rgba(240, 230, 205, 0.95), transparent) !important; }
+
+/* PRODUCT - Rosa */
+.portfolio-item[data-category="product"] .portfolio-overlay {
+  background: linear-gradient(to top, rgba( 215, 170, 185, 0.95), transparent) !important;
+}
+.portfolio-item.arch-inverted[data-category="product"] .portfolio-overlay {
+  background: linear-gradient(to bottom, rgba( 215, 170, 185, 0.95), transparent) !important;
+}
+
+/* EXHIBIT - Celeste */
+.portfolio-item[data-category="exhibit"] .portfolio-overlay {
+  background: linear-gradient(to top, rgba(157, 189, 199, 0.95), transparent) !important;
+}
+.portfolio-item.arch-inverted[data-category="exhibit"] .portfolio-overlay {
+  background: linear-gradient(to bottom, rgba(157, 189, 199, 0.95), transparent) !important;
+}
+
+/* OUTDOOR - Beige */
+.portfolio-item[data-category="outdoor"] .portfolio-overlay {
+  background: linear-gradient(to top, rgba(240, 230, 205, 0.95), transparent) !important;
+}
+.portfolio-item.arch-inverted[data-category="outdoor"] .portfolio-overlay {
+  background: linear-gradient(to bottom, rgba(240, 230, 205, 0.95), transparent) !important;
+}
+
+
+
+
+.footer-logo a svg {
+  height: 40px;
+  width: 160px;
+  opacity: 0.9;
+}
+
+/* --- CUSTOM DROPDOWN COLORS --- */
+/* Default (fuori dalle categorie) */
+.dropdown-menu {
+  background: rgb(147, 94, 117) !important;
+}
+.dropdown-menu a {
+  color: rgb(240, 230, 205) !important;
+}
+
+/* Interior Design */
+body.theme-interior .dropdown-menu {
+  background: rgb(240, 230, 205) !important;
+}
+body.theme-interior .dropdown-menu a {
+  color: rgb(147, 94, 117) !important;
+}
+
+/* Product Design */
+body.theme-product .dropdown-menu {
+  background: rgb(215, 170, 185) !important;
+}
+body.theme-product .dropdown-menu a {
+  color: rgb(147, 94, 117) !important;
+}
+
+/* Exhibit */
+body.theme-exhibit .dropdown-menu {
+  background: rgb(157, 189, 199) !important;
+}
+body.theme-exhibit .dropdown-menu a {
+  color: rgb(118, 152, 162) !important;
+}
+
+/* Outdoor */
+body.theme-outdoor .dropdown-menu {
+  background: rgb(240, 230, 205) !important;
+}
+body.theme-outdoor .dropdown-menu a {
+  color: rgb(157, 189, 199) !important;
+}
+/* -------------------------------- */
+
+
+
+/* --- CUSTOM FILTER BUTTON ACTIVE COLORS --- */
+.filter-btn[data-filter="all"].active,
+.filter-btn[data-filter="all"]:hover {
+  background-color: rgb(147, 94, 117) !important; /* Burgundy */
+  color: rgb(240, 230, 205) !important; /* Dark Celeste */
+  border-color: rgb(147, 94, 117) !important;
+}
+.filter-btn[data-filter="interior"].active,
+.filter-btn[data-filter="interior"]:hover {
+  background-color: rgb(240, 230, 205) !important; /* Burgundy */
+  color: rgb(147, 94, 117) !important; /* Beige */
+  border-color: rgb(240, 230, 205) !important;
+}
+
+.filter-btn[data-filter="product"].active,
+.filter-btn[data-filter="product"]:hover {
+  background-color: rgb(215, 170, 185) !important; /* Pink */
+  color: rgb(147, 94, 117) !important; /* Burgundy */
+  border-color: rgb(215, 170, 185) !important;
+}
+
+.filter-btn[data-filter="exhibit"].active,
+.filter-btn[data-filter="exhibit"]:hover {
+  background-color: rgb(157, 189, 199) !important; /* Celeste */
+  color: rgb(118, 152, 162) !important; /* Dark Celeste */
+  border-color: rgb(157, 189, 199) !important;
+}
+
+.filter-btn[data-filter="outdoor"].active,
+.filter-btn[data-filter="outdoor"]:hover {
+  background-color: rgb(240, 230, 205) !important; /* Beige */
+  color: rgb(157, 189, 199) !important; /* Celeste */
+  border-color: rgb(240, 230, 205) !important;
+}
+/* ------------------------------------------- */
+
+
+
+
+
+
+
+a, button { touch-action: manipulation; }
+
+
+.dropdown-container > a { position: relative; z-index: 100; }
+
+
+/* Sfumature personalizzate per categorie in Home */
+.category-image.theme-interior::after {
+  background: linear-gradient(to top, rgba(147, 94, 117, 0.7), transparent) !important;
+}
+.category-image.theme-interior:hover::after {
+  background: linear-gradient(to top, rgba(147, 94, 117, 1), transparent) !important;
+}
+
+
+.category-image.theme-outdoor::after {
+  background: linear-gradient(to top, rgba(240, 230, 205, 0.7), transparent) !important;
+}
+.category-image.theme-outdoor:hover::after {
+  background: linear-gradient(to top, rgba(240, 230, 205, 1), transparent) !important;
+}
+
+
+.category-image.theme-exhibit::after {
+  background: linear-gradient(to top, rgba(157, 189, 199, 0.7), transparent) !important;
+}
+.category-image.theme-exhibit:hover::after {
+  background: linear-gradient(to top, rgba(157, 189, 199, 1), transparent) !important;
+}
+
+
+.category-image.theme-product::after {
+  background: linear-gradient(to top, rgba(215, 170, 185, 0.7), transparent) !important;
+}
+.category-image.theme-product:hover::after {
+  background: linear-gradient(to top, rgba(215, 170, 185, 1), transparent) !important;
+}
+
+
+/* Custom gradients for hero arches */
+.hero-item.theme-interior::after {
+  background: linear-gradient(to top, rgba(147, 94, 117, 0.5), transparent) !important;
+}
+.hero-item.theme-interior:hover::after {
+  background: linear-gradient(to top, rgba(147, 94, 117, 0.8), transparent) !important;
+}
+
+.hero-item.theme-outdoor::after {
+  background: linear-gradient(to top, rgba(240, 230, 205, 0.5), transparent) !important;
+}
+.hero-item.theme-outdoor:hover::after {
+  background: linear-gradient(to top, rgba(240, 230, 205, 0.8), transparent) !important;
+}
+
+.hero-item.theme-exhibit::after {
+  background: linear-gradient(to top, rgba(157, 189, 199, 0.5), transparent) !important;
+}
+.hero-item.theme-exhibit:hover::after {
+  background: linear-gradient(to top, rgba(157, 189, 199, 0.8), transparent) !important;
+}
+
+.hero-item.theme-product::after {
+  background: linear-gradient(to top, rgba(215, 170, 185, 0.5), transparent) !important;
+}
+.hero-item.theme-product:hover::after {
+  background: linear-gradient(to top, rgba(215, 170, 185, 0.8), transparent) !important;
+}
+
+/* Lightbox text colors */
+.lightbox.theme-interior #lightbox-title,
+.lightbox.theme-interior #lightbox-desc,
+.lightbox.theme-interior .lightbox-more {
+  color: rgb(147, 94, 117) !important;
+}
+
+.lightbox.theme-exhibit #lightbox-title,
+.lightbox.theme-exhibit #lightbox-desc,
+.lightbox.theme-exhibit .lightbox-more {
+  color: rgb(118, 152, 162) !important;
+}
+
+.lightbox.theme-outdoor #lightbox-title,
+.lightbox.theme-outdoor #lightbox-desc,
+.lightbox.theme-outdoor .lightbox-more {
+  color: rgb(157, 189, 199) !important;
+}
+
+.lightbox.theme-product #lightbox-title,
+.lightbox.theme-product #lightbox-desc,
+.lightbox.theme-product .lightbox-more {
+  color: rgb(147, 94, 117) !important;
+}
+
+/* Sposta in basso la foto ritratto nella home */
+.home-about .about-image img {
+  object-position: center 20% !important;
+}
+
+/* Rendi il riquadro portrait pi grande su desktop */
+@media (min-width: 993px) {
+  .home-about .about-image {
+    flex: 0 0 48% !important;
+  }
+}

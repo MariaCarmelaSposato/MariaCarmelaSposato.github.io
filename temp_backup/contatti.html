@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti | Parliamo del tuo progetto</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation: Floating Pill -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="contatti.html" class="active">Contatti</a></li>
+    </ul>
+
+    <a href="index.html" class="nav-brand"><img src="assets/logo.svg" alt="tundi logo"></a>
+
+    <ul class="nav-links">
+      <li class="dropdown-container">
+        <a href="progetti.html">Progetti</a>
+        <ul class="dropdown-menu">
+          <li><a href="progetti.html?filter=interior">Interior Design</a></li>
+          <li><a href="progetti.html?filter=product">Product Design</a></li>
+          <li><a href="progetti.html?filter=outdoor">Outdoor</a></li>
+          <li><a href="progetti.html?filter=exhibit">Exhibit</a></li>
+        </ul>
+      </li>
+      <li><a href="#servizi">I Miei Servizi</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="container contact-section">
+    <h1>Contattami</h1>
+    <p>Pronto a dare forma alle tue idee? Lasciami un messaggio.</p>
+    
+    <div class="contact-form">
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Il tuo nome</label>
+          <input type="text" id="name" name="name" required placeholder="Es. Mario Rossi">
+        </div>
+        <div class="form-group">
+          <label for="email">La tua email</label>
+          <input type="email" id="email" name="email" required placeholder="Es. mario@example.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Il tuo messaggio</label>
+          <textarea id="message" name="message" required placeholder="Raccontami il tuo progetto..."></textarea>
+        </div>
+        <button type="submit" class="btn" style="width: 100%; text-align: center;">Invia Messaggio</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 tundi - Interior & Product Designer. Nessuno spigolo, solo creatività.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

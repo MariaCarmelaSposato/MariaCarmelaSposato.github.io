@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Progetti selezionati</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation: Floating Pill -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+
+    <a href="index.html" class="nav-brand"><img src="assets/logo.svg" alt="tundi logo"></a>
+
+    <ul class="nav-links">
+      <li class="dropdown-container">
+        <a href="progetti.html" class="active">Progetti</a>
+        <ul class="dropdown-menu">
+          <li><a href="progetti.html?filter=interior">Interior Design</a></li>
+          <li><a href="progetti.html?filter=product">Product Design</a></li>
+          <li><a href="progetti.html?filter=outdoor">Outdoor</a></li>
+          <li><a href="progetti.html?filter=exhibit">Exhibit</a></li>
+        </ul>
+      </li>
+      <li><a href="#servizi">I Miei Servizi</a></li>
+    </ul>
+  </nav>
+
+  <!-- Category Hero Section (Fuori dal container principale per prendere il 100% della pagina) -->
+  <section id="category-hero-section" class="category-hero-section" style="display: none;">
+    <div id="category-hero" class="category-hero">
+      <div class="category-hero-image">
+        <img id="cat-hero-img" src="" alt="Category Image">
+      </div>
+      <div class="category-hero-content">
+        <h1 id="cat-hero-title"></h1>
+        <p id="cat-hero-desc"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="portfolio-section" class="container portfolio-section">
+    <div id="default-portfolio-header" style="text-align: center; margin-bottom: 2rem;">
+      <h1 id="portfolio-title">Il Mio Lavoro</h1>
+      <p id="portfolio-desc">Esplora i miei progetti per categoria.</p>
+    </div>
+
+    <!-- Filters (Hidden when inside a specific category intro) -->
+    <div id="portfolio-filters" class="filters">
+      <button class="filter-btn active" data-filter="all">Tutti</button>
+      <button class="filter-btn" data-filter="interior">Interior Design</button>
+      <button class="filter-btn" data-filter="product">Product Design</button>
+      <button class="filter-btn" data-filter="exhibit">Exhibit</button>
+      <button class="filter-btn" data-filter="outdoor">Outdoor</button>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+      <!-- Item 1: Interior -->
+      <a href="classico-contemporaneo.html" class="portfolio-item" data-category="interior">
+        <img src="assets/home-interior.png" alt="Progetto Interior Design">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <h3>Classico Contemporaneo</h3>
+            <p>Interior Design</p>
+          </div>
+        </div>
+        </a>
+        <!-- Item 1A: Interior Extra -->
+        <a href="casino-losina.html" class="portfolio-item arch-inverted" data-category="interior">
+          <img src="assets/interior_extra1.png" alt="Progetto Interior Design Extra 1">
+
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <h3>Casino Losina De Rosis Resort</h3>
+              <p>Interior Design</p>
+            </div>
+          </div>
+        </a>
+        <!-- Item 1B: Interior Extra -->
+        <a href="stanza-matese.html" class="portfolio-item" data-category="interior">
+          <img src="assets/interior_extra2.png" alt="Progetto Interior Design Extra 2">
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <h3>Stanza Matese</h3>
+              <p>Interior Design</p>
+            </div>
+          </div>
+        </a>
+      
+      <!-- Item 2: Product -->
+      <a href="progetto-singolo.html" class="portfolio-item" data-category="product">
+        <img src="assets/exhibit-1.jpg" alt="Progetto Product Design">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <h3>Seduta Sinuosa</h3>
+            <p>Product Design</p>
+          </div>
+        </div>
+        </a>
+      
+      <!-- Item 3: Exhibit -->
+      <a href="progetto-singolo.html" class="portfolio-item" data-category="exhibit">
+        <img src="assets/exhibit-1.jpg" alt="Progetto Exhibit Design">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <h3>Stand Avvolgente</h3>
+            <p>Exhibit</p>
+          </div>
+        </div>
+        </a>
+      
+      <!-- Item 4: Outdoor -->
+      <a href="progetto-singolo.html" class="portfolio-item" data-category="outdoor">
+        <img src="assets/home-outdoor.jpg" alt="Progetto Outdoor Design">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <h3>Piscina Circolare</h3>
+            <p>Outdoor</p>
+          </div>
+        </div>
+        </a>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close">&times;</button>
+      <img id="lightbox-img" src="" alt="Galleria Ingrandita">
+      <div class="lightbox-text">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+      </div>
+      <button id="lightbox-more" class="lightbox-more">Scopri di più</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 tundi - Interior & Product Designer. Nessuno spigolo, solo creatività.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

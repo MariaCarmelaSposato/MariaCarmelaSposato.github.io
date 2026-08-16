@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior & Product Design</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation: Floating Pill -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+
+    <a href="index.html" class="nav-brand"><img src="assets/logo.svg" alt="tundi logo"></a>
+
+    <ul class="nav-links">
+      <li class="dropdown-container">
+        <a href="progetti.html">Progetti</a>
+        <ul class="dropdown-menu">
+          <li><a href="progetti.html?filter=interior">Interior Design</a></li>
+          <li><a href="progetti.html?filter=product">Product Design</a></li>
+          <li><a href="progetti.html?filter=outdoor">Outdoor</a></li>
+          <li><a href="progetti.html?filter=exhibit">Exhibit</a></li>
+        </ul>
+      </li>
+      <li><a href="#servizi">I Miei Servizi</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section (Fullscreen Grid) -->
+  <section class="hero hero-full">
+    <div class="hero-grid">
+      <!-- Colonna 1: Interior Design -->
+      <div class="hero-col hero-item" data-title="Interior Design" data-desc="Progetti che abbracciano linee morbide, eliminando le rigidità visive a favore dell'armonia per farti sentire sempre protetto e accolto.">
+        <img src="assets/home-interior.png" alt="Interior Design" class="hero-image-vertical">
+      </div>
+      
+      <!-- Colonna 2: Exhibit -->
+      <div class="hero-col hero-item" data-title="Exhibit" data-desc="Progettazione di stand ed esposizioni che guidano il visitatore in un'esperienza sensoriale completa, fondendo architettura ed esposizione.">
+        <img src="assets/exhibit-1.jpg" alt="Exhibit Design" class="hero-image-vertical">
+      </div>
+      
+      <!-- Colonna 3: Outdoor -->
+      <div class="hero-col hero-item" data-title="Outdoor" data-desc="Scenografie e spazi aperti in cui il costruito incontra naturalmente la natura con un percorso senza stacco visivo, in pura continuità.">
+        <img src="assets/home-outdoor.jpg" alt="Outdoor Design" class="hero-image-vertical">
+      </div>
+    </div>
+
+    <div class="hero-quote">
+      <blockquote class="manifesto-quote">
+        <p>“L’armonia non segue mai una linea retta.”</p>
+        <cite>— Maria Carmela Sposato</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Section About Intro (Home-About) -->
+  <section class="home-about container reveal-on-scroll">
+    <div class="about-split">
+      <div class="about-content">
+        <h2>Oltre la Linea Retta</h2>
+        <div class="text-teaser">
+          <p>Il mio lavoro nasce dalla ricerca di un’armonia fluida che accolga la vita quotidiana. Ogni spazio è un organismo vivo che respira attraverso forme organiche e materiali caldi, eliminando le rigidità visive per creare puro benessere. La progettazione non è mai un atto isolato, ma un dialogo tra materia e spirito, dove la curva diventa il linguaggio universale dell'accoglienza e dell'emozione pura che ogni ambiente deve saper trasmettere a chi lo abita. Credo fermamente che l'architettura debba essere un abbraccio, un luogo dove il tempo rallenta e la bellezza diventa una necessità quotidiana, non un lusso effimero.</p>
+        </div>
+        <div style="margin-top: 1rem;">
+          <a href="about.html" class="btn">Per saperne di più</a>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="assets/about-portrait.png" alt="Visione Artistica">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Project Categories -->
+  <section class="home-categories container">
+    <!-- Category 1: Interior Design -->
+    <div class="category-item reveal-on-scroll">
+      <div class="category-split">
+        <a href="progetti.html?filter=interior" class="category-image">
+          <img src="assets/home-interior.png" alt="Interior Design">
+          <h3 class="category-label-overlay">Interior<br>Design</h3>
+        </a>
+        <div class="category-text">
+          <div class="text-teaser">
+            <p>Spazi che parlano di chi li abita, dove ogni arredo e ogni luce sono pensati per creare un'esperienza di calma e bellezza sinuosa. La progettazione degli interni per me è un racconto che inizia dalle sensazioni e si trasforma in materia, tra linee curve e armonia...</p>
+          </div>
+          <div style="margin-top: 1rem;">
+            <a href="progetti.html?filter=interior" class="btn">Per saperne di più</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 2: Outdoor -->
+    <div class="category-item category-reverse reveal-on-scroll">
+      <div class="category-split">
+        <a href="progetti.html?filter=outdoor" class="category-image">
+          <img src="assets/home-outdoor.jpg" alt="Outdoor Design">
+          <h3 class="category-label-overlay">Outdoor</h3>
+        </a>
+        <div class="category-text">
+          <div class="text-teaser">
+            <p>Il dialogo costante tra costruito e natura: giardini e terrazze diventano estensioni fluide del benessere interno. Progettare l'esterno significa creare una stanza a cielo aperto dove la natura non viene domata, ma accolta in un abbraccio continuo con lo spazio abitativo...</p>
+          </div>
+          <div style="margin-top: 1rem;">
+            <a href="progetti.html?filter=outdoor" class="btn">Per saperne di più</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 3: Exhibit -->
+    <div class="category-item reveal-on-scroll">
+      <div class="category-split">
+        <a href="progetti.html?filter=exhibit" class="category-image">
+          <img src="assets/exhibit-1.jpg" alt="Exhibit Design">
+          <h3 class="category-label-overlay">Exhibit<br>Design</h3>
+        </a>
+        <div class="category-text">
+          <div class="text-teaser">
+            <p>Esperienze immersive e scenografie che guidano il visitatore in un percorso sensoriale fatto di forme e atmosfera. Ogni allestimento è una messa in scena poetica, dove il prodotto o l'opera d'arte trovano la loro casa temporanea in un guscio di pura emozione...</p>
+          </div>
+          <div style="margin-top: 1rem;">
+            <a href="progetti.html?filter=exhibit" class="btn">Per saperne di più</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 4: Product Design -->
+    <div class="category-item category-reverse reveal-on-scroll">
+      <div class="category-split">
+        <a href="progetti.html?filter=product" class="category-image">
+          <img src="assets/hero-home.jpg" alt="Product Design Placeholder">
+          <h3 class="category-label-overlay">Product<br>Design</h3>
+        </a>
+        <div class="category-text">
+          <div class="text-teaser">
+            <p>Oggetti scultorei e funzionali in cui la materia si piega alla sinuosità della linea per creare pezzi senza tempo. Dalla sedia al complemento d'arredo, ogni oggetto è un piccolo universo di armonia molecolare, pensato per essere accarezzato con lo sguardo e con le mani...</p>
+          </div>
+          <div style="margin-top: 1rem;">
+            <a href="progetti.html?filter=product" class="btn">Per saperne di più</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close">&times;</button>
+      <img id="lightbox-img" src="" alt="Galleria Ingrandita">
+      <div class="lightbox-text">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+      </div>
+      <button id="lightbox-more" class="lightbox-more">Scopri di più</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 tundi - Interior & Product Designer. Nessuno spigolo, solo creatività.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

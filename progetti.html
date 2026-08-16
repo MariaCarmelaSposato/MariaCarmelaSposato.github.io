@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Progetti selezionati</title>
+  <link rel="stylesheet" href="css/style.css?v=272">
+</head>
+<body>
+
+  <!-- Navigation: Floating Pill -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+
+    <a href="index.html" class="nav-brand"><svg id="tundi-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252.8 89">
+    <path class="logo-n" d="M99.45,58.83c0-16.59,13.39-29.84,29.84-29.84s29.84,13.25,29.84,29.84v25.86c0,2.18-1.75,3.93-3.93,3.93s-3.93-1.75-3.93-3.93v-25.86c0-12.08-9.9-21.98-21.98-21.98s-21.98,9.9-21.98,21.98"/>
+    <path class="logo-u" d="M99.45,59.08c0-2.17,1.76-3.94,3.94-3.94s3.94,1.76,3.94,3.94v-.3c0,16.45-13.39,29.84-29.84,29.84s-29.84-13.39-29.84-29.84v-25.85c0-2.33,1.75-3.93,3.93-3.93s3.93,1.6,3.93,3.93v25.85c0,12.08,9.9,21.98,21.98,21.98s21.98-9.9,21.98-21.98"/>
+    <path class="logo-d" d="M232.55,58.36v.63c0,16.58-13.55,30-30,30s-30-13.42-30-30,13.42-30,30-30c9.62,0,18.1,4.56,23.67,11.65V3.29c0-1.9,1.39-3.29,3.16-3.29s3.17,1.39,3.17,3.29v55.07ZM225.84,58.99c0-12.79-10.38-23.17-23.29-23.17s-23.17,10.38-23.17,23.17,10.38,23.29,23.17,23.29,23.29-10.38,23.29-23.29Z"/>
+    <path class="logo-i" d="M245.96,85.2v-52.92c0-1.9,1.39-3.42,3.42-3.42,1.77,0,3.42,1.52,3.42,3.42v52.92c0,1.9-1.64,3.42-3.42,3.42-2.03,0-3.42-1.52-3.42-3.42Z"/>
+    <path class="logo-t" d="M33.8,85.58c0,1.9-1.52,3.42-3.42,3.42h-2.03c-13.29,0-28.36-8.35-28.36-30.38V3.8C0,1.9,1.39.38,3.42.38c1.9,0,3.42,1.52,3.42,3.42v25.7h19.87c1.77,0,3.16,1.39,3.16,3.16,0,1.9-1.39,3.29-3.16,3.29H6.84v22.66c0,16.2,10,23.42,21.52,23.42l2.03.13c1.9,0,3.42,1.52,3.42,3.42Z"/>
+</svg></a>
+
+    <ul class="nav-links">
+      <li class="dropdown-container">
+        <a href="progetti.html" class="active">Progetti</a>
+        <ul class="dropdown-menu">
+          <li><a href="progetti.html?filter=interior">Interior Design</a></li>
+          <li><a href="progetti.html?filter=exhibit">Exhibit</a></li>
+          <li><a href="progetti.html?filter=product">Product Design</a></li>
+          <li><a href="progetti.html?filter=outdoor">Outdoor</a></li>
+        </ul>
+      </li>
+      <li><a href="servizi.html">Servizi</a></li>
+    </ul>
+  </nav>
+
+  <!-- Category Hero Section (Fuori dal container principale per prendere il 100% della pagina) -->
+  <section id="category-hero-section" class="category-hero-section" style="display: none;">
+    <div id="category-hero" class="category-hero">
+      <div class="category-hero-image">
+        <img id="cat-hero-img" src="" alt="Category Image">
+      </div>
+      <div class="category-hero-content">
+        <h1 id="cat-hero-title"></h1>
+        <p id="cat-hero-desc"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="portfolio-section" class="container portfolio-section">
+    <div id="default-portfolio-header" style="text-align: center; margin-bottom: 2rem;">
+      <h1 id="portfolio-title">Il Nostro Lavoro</h1>
+      <p id="portfolio-desc">Esplora i miei progetti per categoria.</p>
+    </div>
+
+    <!-- Filters (Hidden when inside a specific category intro) -->
+    <div id="portfolio-filters" class="filters">
+      <button class="filter-btn active" data-filter="all">Tutti</button>
+      <button class="filter-btn" data-filter="interior">Interior Design</button>
+      <button class="filter-btn" data-filter="exhibit">Exhibit</button>
+      <button class="filter-btn" data-filter="product">Product Design</button>
+      <button class="filter-btn" data-filter="outdoor">Outdoor</button>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+      <!-- Item 0: NAIADE (Interior & Outdoor) -->
+      <a href="naiade.html" class="portfolio-item" data-category="interior outdoor">
+        <img src="assets/frontale giorno.jpg" alt="NAIADE Residenza Tropicale Contemporanea" style="object-position: center;">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <h3>NAIADE<br>Residenza Tropicale Contemporanea</h3>
+            <p>Interior & Outdoor</p>
+          </div>
+        </div>
+      </a>
+      <!-- Item 1: Interior -->
+      <a href="classico-contemporaneo.html" class="portfolio-item" data-category="interior">
+        <img src="assets/home-interior.png" alt="Progetto Interior Design">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <h3>Classico Contemporaneo</h3>
+            <p>Interior Design</p>
+          </div>
+        </div>
+        </a>
+        <!-- Item 1A: Interior Extra -->
+        <a href="casino-losina.html" class="portfolio-item" data-category="interior outdoor">
+          <img src="assets/ingresso-principale.png" alt="Casino Losina De Rosis Resort" style="object-position: 52% center;">
+
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <h3>Casino Losina De Rosis Resort</h3>
+              <p>Interior Design</p>
+            </div>
+          </div>
+        </a>
+        <!-- Item 1B: Interior Extra -->
+        <a href="stanza-matese.html" class="portfolio-item" data-category="interior">
+          <img src="assets/1.jpg" alt="Progetto Stanza Matese" style="object-position: 20% center;">
+          <div class="portfolio-overlay">
+            <div class="portfolio-info">
+              <h3>Stanza Matese</h3>
+              <p>Interior Design</p>
+            </div>
+          </div>
+        </a>
+      
+      <!-- Item 2: Product -->
+      <a href="ploom.html" class="portfolio-item" data-category="product">
+        <img src="assets/Image14.png" alt="Progetto Product Design">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <h3>Ploom</h3>
+            <p>Product Design</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Item 2A: Product Extra (-1) -->
+      <a href="-1.html" class="portfolio-item" data-category="product">
+        <img src="assets/prodotto appeso png.png" alt="Progetto -1" style="object-position: 60% 30%;">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <h3>-1</h3>
+            <p>Product Design</p>
+          </div>
+        </div>
+      </a>
+
+      
+      <!-- Item 3: Exhibit -->
+      <a href="jo-malone.html" class="portfolio-item" data-category="exhibit">
+        <img src="assets/exhibit-1.jpg" alt="Stand Jo Malone London">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <h3>Stand Jo Malone London</h3>
+            <p>Exhibit Design</p>
+          </div>
+        </div>
+      </a>
+        
+      <!-- Item 3A: Exhibit Extra -->
+      <a href="retail-store.html" class="portfolio-item" data-category="exhibit">
+        <img src="assets/VETRINA def.jpg?v=1" alt="Retail store">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <h3>Retail store</h3>
+            <p>Exhibit Design</p>
+          </div>
+        </div>
+        </a>
+      
+      <!-- Item 4: Outdoor -->
+      <a href="villa-matese.html" class="portfolio-item" data-category="outdoor">
+        <img src="assets/home-outdoor.jpg" alt="Progetto Outdoor Design">
+        <div class="portfolio-overlay">
+          <div class="portfolio-info">
+            <h3>Esterno Villa Matese</h3>
+            <p>Outdoor</p>
+          </div>
+        </div>
+        </a>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close">&times;</button>
+      <img id="lightbox-img" src="" alt="Galleria Ingrandita">
+      <div class="lightbox-text">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+      </div>
+      <button id="lightbox-more" class="lightbox-more">Scopri di più</button>
+    </div>
+  </div>
+
+              <footer>
+    <div class="footer-content">
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="progetti.html">Progetti</a>
+        <a href="servizi.html">Servizi</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="assets/logo.svg" alt="tundi logo">
+        </a>
+      </div>
+      <div class="footer-contacts">
+        <div class="footer-contact-links">
+          <a href="mailto:studioform@tundi.it">E-mail: studioform@tundi.it</a>
+          <a href="tel:+393473747505">tel: +39 3473747505</a>
+          <a href="https://instagram.com/tundi_studioform" target="_blank">instagram: tundi_studioform</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js?v=272"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
