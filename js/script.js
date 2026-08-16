@@ -496,10 +496,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioSection = document.getElementById('portfolio-section');
 
     const categoryData = {
-      'interior': { title: 'Interior Design', desc: "Progettiamo spazi cuciti su misura per te. Che tu preferisca linee morbide e avvolgenti o geometrie piùù pulite, il nostro obiettivo èè trovare sempre la perfetta armonia visiva, creando ambienti in cui ti sentirai a casa.", img: 'assets/home-interior.png' },
-      'product': { title: 'Product Design', desc: "Dalla singola seduta al complemento d'arredo, studiamo ogni dettaglio per dare forma a oggetti pratici e senza tempo. Il nostro approccio si distingue per l'assenza di spigoli visivi, privilegiando la fluiditàà e l'armonia.", img: 'assets/Image8.png', pos: 'center 70%' },
-      'exhibit': { title: 'Exhibit Design', desc: "Esperienze immersive e scenografie che guidano il visitatore in un percorso sensoriale fatto di forme e atmosfera. Ogni allestimento èè una messa in scena poetica, dove il prodotto o l'opera d'arte trovano la loro casa temporanea in un guscio di pura emozione.", img: 'assets/exhibit-1.jpg' },
-      'outdoor': { title: 'Outdoor', desc: "Il dialogo costante tra costruito e natura: giardini e terrazze diventano estensioni fluide del benessere interno. Progettare l'esterno significa creare una stanza a cielo aperto dove la natura non viene domata, ma accolta in un abbraccio continuo con lo spazio abitativo.", img: 'assets/home-outdoor.jpg' }
+      'interior': { title: 'Interior Design', desc: "Progettiamo spazi cuciti su misura per te. Che tu preferisca linee morbide e avvolgenti o geometrie piùù pulite, il nostro obiettivo èè trovare sempre la perfetta armonia visiva, creando ambienti in cui ti sentirai a casa.", img: 'assets/home-interior.webp' },
+      'product': { title: 'Product Design', desc: "Dalla singola seduta al complemento d'arredo, studiamo ogni dettaglio per dare forma a oggetti pratici e senza tempo. Il nostro approccio si distingue per l'assenza di spigoli visivi, privilegiando la fluiditàà e l'armonia.", img: 'assets/Image8.webp', pos: 'center 70%' },
+      'exhibit': { title: 'Exhibit Design', desc: "Esperienze immersive e scenografie che guidano il visitatore in un percorso sensoriale fatto di forme e atmosfera. Ogni allestimento èè una messa in scena poetica, dove il prodotto o l'opera d'arte trovano la loro casa temporanea in un guscio di pura emozione.", img: 'assets/exhibit-1.webp' },
+      'outdoor': { title: 'Outdoor', desc: "Il dialogo costante tra costruito e natura: giardini e terrazze diventano estensioni fluide del benessere interno. Progettare l'esterno significa creare una stanza a cielo aperto dove la natura non viene domata, ma accolta in un abbraccio continuo con lo spazio abitativo.", img: 'assets/home-outdoor.webp' }
     };
 
     
